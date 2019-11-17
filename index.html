@@ -4,8 +4,71 @@
     </head>
     <body>
         <script>
+            function computerPlay(){
+                let random = Math.floor(Math.random()*3);
+                return random;
+                //0-rock 1-paper 2-scissors
+            }
+
+            function round(playerMove){
+                let computerMove =computerPlay();
+                if(computerMove==0){
+                    if(playerMove=="paper" || playerMove=="Paper" ||playerMove=="PAPER"){
+                        return "You won! Paper beats Rock.";
+                    }
+                    else if(playerMove=="rock" || playerMove=="Rock" ||playerMove=="ROCK"){
+                        return "That's a Draw! Both are Rocks";
+                    }
+                    else if(playerMove=="scissors" || playerMove=="Scissors" ||playerMove=="SCISSORS"){
+                        return "You lose! Rock beats Scissors.";
+                    }
+                    else{
+                        return "I'm sorry, could You repeat?";
+                    }
+                }
+                else if(computerMove==1){
+                    if(playerMove=="scissors" || playerMove=="Scissors" ||playerMove=="SCISSORS"){
+                        return "You won! Scissors beats Paper.";
+                    }
+                    else if(playerMove=="paper" || playerMove=="Paper" ||playerMove=="PAPER"){
+                        return "That's a Draw! Both are Papers";
+                    }
+                    else if(playerMove=="rock" || playerMove=="Rock" ||playerMove=="ROCK"){
+                        return "You lose! Paper beats Rock.";
+                    }
+                    else{
+                        return "I'm sorry, could You repeat?";
+                    }
+                }
+                else{
+                    if(playerMove=="rock" || playerMove=="Rock" ||playerMove=="ROCK"){
+                        return "You won! Rock beats Scissors.";
+                    }
+                    else if(playerMove=="scissors" || playerMove=="Scissors" ||playerMove=="SCISSORS"){
+                        return "That's a Draw! Both are Scissors";
+                    }
+                    else if(playerMove=="paper" || playerMove=="Paper" ||playerMove=="PAPER"){
+                        return "You lose! Scissors beats Paper.";
+                    }
+                    else{
+                        return "I'm sorry, could You repeat?";
+                    }
+                }
+            }
+            function game(numberOfRounds){
+                let result;
+                while(numberOfRounds>0){
+
+                    result=round(prompt());
+                    console.log(result);
+                    if(result!="I'm sorry, could You repeat?"){
+                        numberOfRounds--;
+                    }
+
+                }
+            }
             
-            
+
         </script>
     </body>
 </html>
